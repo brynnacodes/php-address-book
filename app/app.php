@@ -24,8 +24,7 @@
 
         $contact_array = Contact::getAll();
 
-
-        return $app["twig"]->render("addresses.html.twig", array("contact" => $contact_array));
+        return $app["twig"]->render("addresses.html.twig", array("contacts" => $contact_array));
     });
 
     return $app;

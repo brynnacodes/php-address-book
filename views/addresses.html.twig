@@ -8,6 +8,21 @@
         <h1>Address Book:</h1>
 
         <h3>Current Entries: </h3>
-    
+        <div>
+            <ul>
+                  {% for contact in contacts %}
+                      <li><strong>Name:</strong> {{ contact.get('name') }}</li>
+                      <li><strong>Phone:</strong> {{ contact.get('phone') }}</li>
+                      <li><strong>Address:</strong>
+                          <ul>
+                              <li><strong>Street:</strong> {{ contact.get('address').get('street') }}</li>
+                              <li><strong>City:</strong> {{ contact.get('address').get('city') }}</li>
+                              <li><strong>State:</strong> {{ contact.get('address').get('state') }}</li>
+                          </ul>
+                      </li>
+                  {% endfor %}
+            </ul>
+            <a href='/'><button>Back</button></a>
+        </div>
     </body>
 </html>

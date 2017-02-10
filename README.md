@@ -22,7 +22,7 @@ _Make sure to have composer installed before running this app._
 * _Spec 1: Create Contact and Address classes in php_
 * _Spec 2: Create form to collect new contact information from user_
 * _Spec 3: Store new contact information as an instance of Contact class_
-* _Spec 4: Display stored contacts on homepage_
+* _Spec 4: Display stored contacts on address book page_
 * _Spec 5: _
 * _Spec 6: _
 * _Spec 7: _
