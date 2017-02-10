@@ -1,15 +1,15 @@
 /*general styles*/
 
-.container {
-  margin: 0px;
-}
-
 body {
   font-family: 'Special Elite', cursive;
   color: #3B3735;
   background-image: url("/../img/body-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.container-fluid {
+  padding-left: 5%;
 }
 
 button {
@@ -30,7 +30,6 @@ button {
 }
 
 #new-contact-form h4 {
-  /*text-align: center;*/
   margin-top: 3%;
 }
 
@@ -57,10 +56,3 @@ button {
   text-align: center;
   margin-top: 20%;
 }
-
-/*@media screen (max-width: 400px;) {
-  .contact-div {
-    width: 100%;
-    display: block;
-  }
-}*/

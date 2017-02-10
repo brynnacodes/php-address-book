@@ -15,26 +15,25 @@
                 {% for contact in contacts %}
                     <div class="contact-div col-xs-12 col-md-3">
                         <ul>
-                            <li><strong>Name:</strong> {{ contact.get('name') }}</li>
-                            <li><strong>Phone:</strong> {{ contact.get('phone') }}</li>
-                            <li><strong>Email:</strong> {{ contact.get('email') }}</li>
-                            <li><strong>Address:</strong>
+                            <li>Name: {{ contact.get('name') }} </li>
+                            <li>Phone: {{ contact.get('phone') }} </li>
+                            <li>Email: {{ contact.get('email') }} </li>
+                            <li>Address
                                 <ul>
-                                    <li><strong>Street:</strong> {{ contact.get('address').get('street') }}</li>
-                                    <li><strong>City:</strong> {{ contact.get('address').get('city') }}</li>
-                                    <li><strong>State:</strong> {{ contact.get('address').get('state') }}</li>
+                                    <li>Street: {{ contact.get('address').get('street') }} </li>
+                                    <li>City: {{ contact.get('address').get('city') }} </li>
+                                    <li>State: {{ contact.get('address').get('state') }} </li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 {% endfor %}
-                <form action='/delete_tasks' method='post'>
-                    <button class="all-buttons btn" type='submit'>Delete all contacts</button>
+                <form action='/delete_contacts' method='post'>
+                    <button class="btn" type='submit'>Delete all contacts</button>
                 </form>
 
-
             <div id="new-contact-form">
-                <form action='/new_contact' method='post'>
+                <form action='/create_contact' method='post'>
                     <h4>Please enter your contact's information below:</h4>
                     <div class="new-entry col-md-6">
                         <div id="name-input" class="form-group">
@@ -51,7 +50,6 @@
                         </div>
                     </div>
                     <div class="new-entry col-md-6">
-                        <!-- <h5>Address: </h5> -->
                         <div id="street-input" class="form-group">
                             <label for='address-street'>Street: </label>
                             <input id='address-street' name='address-street' type='text'>
@@ -65,7 +63,7 @@
                             <input id='address-state' name='address-state' type='text'>
                         </div>
                     </div><br>
-                    <button class="all-buttons btn" type='submit'>View new contact</button>
+                    <button class="btn" type='submit'>View new contact</button>
                 </form>
             </div>
         </div>

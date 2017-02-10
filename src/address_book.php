@@ -62,6 +62,6 @@
         {
             $_SESSION["list_of_contacts"] = [];
         }
-  }
+    }
 
 ?>

@@ -19,19 +19,19 @@
         return $app["twig"]->render("contact_form.html.twig", array("contacts" => $contact_array));
     });
 
-    $app->post("/new_contact", function() use ($app) {
+    $app->post("/create_contact", function() use ($app) {
         $my_address = new Address($_POST['address-street'], $_POST['address-city'], $_POST['address-state']);
         $my_contact = new Contact($_POST['name'], $_POST['phone'], $_POST['email'], $my_address);
         $my_contact->save();
 
-        return $app["twig"]->render("addresses.html.twig", ["contact" => $my_contact]);
+        return $app["twig"]->render("create_contact.html.twig", ["contact" => $my_contact]);
     });
 
-    $app->post("delete_tasks", function() use ($app) {
+    $app->post("delete_contacts", function() use ($app) {
         Contact::deleteAll();
 
         return $app["twig"]->render("delete.html.twig");
     });
 
     return $app;
- ?>
+?>
