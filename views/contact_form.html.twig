@@ -10,7 +10,10 @@
             <input id='name' name='name' type='text'>
 
             <label for='phone'>Phone: </label>
-            <input id='phone' name='phone' type='text'><br>
+            <input id='phone' name='phone' type='text'>
+
+            <label for='email'>Email: </label>
+            <input id='email' name='email' type='text'><br>
 
             <label>Address: </label><br>
             <label for='address-street'>Street: </label>
@@ -19,9 +22,30 @@
             <label for='address-city'>City: </label>
             <input id='address-city' name='address-city' type='text'>
 
-            <label for='address-state'>Phone: </label>
+            <label for='address-state'>State: </label>
             <input id='address-state' name='address-state' type='text'>
             <button type='submit'>View your entry</button>
         </form>
+
+        <h1>Address Book:</h1>
+        <h3>Current Entries: </h3>
+        <div>
+            <ul>
+                  {% for contact in contacts %}
+                      <li><strong>Name:</strong> {{ contact.get('name') }}</li>
+                      <li><strong>Phone:</strong> {{ contact.get('phone') }}</li>
+                      <li><strong>Email:</strong> {{ contact.get('email') }}</li>
+
+                      <li><strong>Address:</strong>
+                          <ul>
+                              <li><strong>Street:</strong> {{ contact.get('address').get('street') }}</li>
+                              <li><strong>City:</strong> {{ contact.get('address').get('city') }}</li>
+                              <li><strong>State:</strong> {{ contact.get('address').get('state') }}</li>
+                          </ul>
+                      </li>
+                  {% endfor %}
+            </ul>
+            <a href='/'><button>Back</button></a>
+        </div>
     </body>
 </html>

@@ -22,10 +22,10 @@ _Make sure to have composer installed before running this app._
 * _Spec 1: Create Contact and Address classes in php_
 * _Spec 2: Create form to collect new contact information from user_
 * _Spec 3: Store new contact information as an instance of Contact class_
-* _Spec 4: Display stored contacts on address book page_
-* _Spec 5: _
-* _Spec 6: _
-* _Spec 7: _
+* _Spec 4: Display stored contacts on home page with new contact form_
+* _Spec 5: When user submits form they are routed to a page that displays only their new contact_
+* _Spec 7: When user presses "back" button they are returned to homepage where they can view all contacts, including their newest entry_
+* _Spec 6: User can clear the contents of the address book_
 * _Spec 8: _
 
 ## Known Bugs

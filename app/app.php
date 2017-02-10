@@ -14,17 +14,17 @@
     ));
 
     $app->get("/", function() use ($app) {
-        return $app["twig"]->render("contact_form.html.twig");
+        $contact_array = Contact::getAll();
+
+        return $app["twig"]->render("contact_form.html.twig", array("contacts" => $contact_array));
     });
 
     $app->post("/new_contact", function() use ($app) {
         $my_address = new Address($_POST['address-street'], $_POST['address-city'], $_POST['address-state']);
-        $my_contact = new Contact($_POST['name'], $_POST['phone'], $my_address);
+        $my_contact = new Contact($_POST['name'], $_POST['phone'], $_POST['email'], $my_address);
         $my_contact->save();
 
-        $contact_array = Contact::getAll();
-
-        return $app["twig"]->render("addresses.html.twig", array("contacts" => $contact_array));
+        return $app["twig"]->render("addresses.html.twig", ["contact" => $my_contact]);
     });
 
     return $app;
