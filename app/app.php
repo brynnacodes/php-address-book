@@ -27,5 +27,11 @@
         return $app["twig"]->render("addresses.html.twig", ["contact" => $my_contact]);
     });
 
+    $app->post("delete_tasks", function() use ($app) {
+        Contact::deleteAll();
+
+        return $app["twig"]->render("delete.html.twig");
+    });
+
     return $app;
  ?>
