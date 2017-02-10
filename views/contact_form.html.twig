@@ -2,52 +2,72 @@
     <head>
         <meta charset='utf-8'>
         <title>Contact Entry</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <script src="js/jquery-3.1.1.js"></script>
+        <script src="js/scripts.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
     </head>
     <body>
-        <form action='/new_contact' method='post'>
-            <h1>Please enter your contact's information below:</h1>
-            <label for='name'>Name: </label>
-            <input id='name' name='name' type='text'>
+        <div class ="container-fluid">
+            <h1 id="home-header">Address Book</h1>
+            <h4>Current Entries: </h4>
+                {% for contact in contacts %}
+                    <div class="contact-div col-xs-12 col-md-3">
+                        <ul>
+                            <li><strong>Name:</strong> {{ contact.get('name') }}</li>
+                            <li><strong>Phone:</strong> {{ contact.get('phone') }}</li>
+                            <li><strong>Email:</strong> {{ contact.get('email') }}</li>
+                            <li><strong>Address:</strong>
+                                <ul>
+                                    <li><strong>Street:</strong> {{ contact.get('address').get('street') }}</li>
+                                    <li><strong>City:</strong> {{ contact.get('address').get('city') }}</li>
+                                    <li><strong>State:</strong> {{ contact.get('address').get('state') }}</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                {% endfor %}
+                <form action='/delete_tasks' method='post'>
+                    <button class="all-buttons btn" type='submit'>Delete all contacts</button>
+                </form>
 
-            <label for='phone'>Phone: </label>
-            <input id='phone' name='phone' type='text'>
 
-            <label for='email'>Email: </label>
-            <input id='email' name='email' type='text'><br>
-
-            <label>Address: </label><br>
-            <label for='address-street'>Street: </label>
-            <input id='address-street' name='address-street' type='text'>
-
-            <label for='address-city'>City: </label>
-            <input id='address-city' name='address-city' type='text'>
-
-            <label for='address-state'>State: </label>
-            <input id='address-state' name='address-state' type='text'>
-            <button type='submit'>View your entry</button>
-        </form>
-
-        <h1>Address Book:</h1>
-        <h3>Current Entries: </h3>
-        <div>
-            <ul>
-                  {% for contact in contacts %}
-                      <li><strong>Name:</strong> {{ contact.get('name') }}</li>
-                      <li><strong>Phone:</strong> {{ contact.get('phone') }}</li>
-                      <li><strong>Email:</strong> {{ contact.get('email') }}</li>
-
-                      <li><strong>Address:</strong>
-                          <ul>
-                              <li><strong>Street:</strong> {{ contact.get('address').get('street') }}</li>
-                              <li><strong>City:</strong> {{ contact.get('address').get('city') }}</li>
-                              <li><strong>State:</strong> {{ contact.get('address').get('state') }}</li>
-                          </ul>
-                      </li>
-                  {% endfor %}
-            </ul>
+            <div id="new-contact-form">
+                <form action='/new_contact' method='post'>
+                    <h4>Please enter your contact's information below:</h4>
+                    <div class="new-entry col-md-6">
+                        <div id="name-input" class="form-group">
+                            <label for='name'>Name: </label>
+                            <input id='name' name='name' type='text'>
+                        </div>
+                        <div id="phone-input" class="form-group">
+                            <label for='phone'>Phone: </label>
+                            <input id='phone' name='phone' type='text'>
+                        </div>
+                        <div id="email-input" class="form-group">
+                            <label for='email'>Email: </label>
+                            <input id='email' name='email' type='text'>
+                        </div>
+                    </div>
+                    <div class="new-entry col-md-6">
+                        <!-- <h5>Address: </h5> -->
+                        <div id="street-input" class="form-group">
+                            <label for='address-street'>Street: </label>
+                            <input id='address-street' name='address-street' type='text'>
+                        </div>
+                        <div id="city-input" class="form-group">
+                            <label for='address-city'>City: </label>
+                            <input id='address-city' name='address-city' type='text'>
+                        </div>
+                        <div id="state-input" class="form-group">
+                            <label for='address-state'>State: </label>
+                            <input id='address-state' name='address-state' type='text'>
+                        </div>
+                    </div><br>
+                    <button class="all-buttons btn" type='submit'>View new contact</button>
+                </form>
+            </div>
         </div>
-        <form action='/delete_tasks' method='post'>
-        <button type='submit'>Delete tasks</button>
-    </form>
     </body>
 </html>

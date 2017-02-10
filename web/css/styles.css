@@ -1,0 +1,66 @@
+/*general styles*/
+
+.container {
+  margin: 0px;
+}
+
+body {
+  font-family: 'Special Elite', cursive;
+  color: #3B3735;
+  background-image: url("/../img/body-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+button {
+  color: white;
+  background-color: #3B3735;
+  font-family: 'Special Elite', cursive;
+}
+
+/*contact-form styles(homepage)*/
+
+#home-header {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  color: #3B3735;
+  letter-spacing: 5;
+  font-size: 60px;
+  padding-top:5%;
+}
+
+#new-contact-form h4 {
+  /*text-align: center;*/
+  margin-top: 3%;
+}
+
+.contact-div {
+  display: inline-block;
+  width: 45%;
+}
+
+.new-entry {
+  width: auto;
+  display: inline-block;
+}
+
+/*addresses styles (new contact page)*/
+
+#address-review {
+  padding-left: 40%;
+  padding-top: 15%;
+}
+
+/*delete contact page styles*/
+
+#clear-address {
+  text-align: center;
+  margin-top: 20%;
+}
+
+/*@media screen (max-width: 400px;) {
+  .contact-div {
+    width: 100%;
+    display: block;
+  }
+}*/

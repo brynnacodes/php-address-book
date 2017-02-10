@@ -1,8 +1,8 @@
-# _Address-book_
+# _Address Book_
 
-#### _An address book built with php/silex/twig, February 9th, 2017_
+#### _An address book for storing simple contact information, February 9th, 2017_
 
-#### By _**Keith Evans & Brynna Klamkin-McCarter**_
+#### By _**Brynna Klamkin-McCarter**_
 
 ## Description
 
@@ -24,10 +24,10 @@ _Make sure to have composer installed before running this app._
 * _Spec 3: Store new contact information as an instance of Contact class_
 * _Spec 4: Display stored contacts on home page with new contact form_
 * _Spec 5: When user submits form they are routed to a page that displays only their new contact_
-* _Spec 7: When user presses "back" button they are returned to homepage where they can view all contacts, including their newest entry_
-* _Spec 6: User can clear the contents of the address book at the bottom of the homepage_
+* _Spec 7: When user presses "back" button they are returned to homepage where they can view all    contacts, including their newest entry_
+* _Spec 6: User can clear the contents of the address book on the homepage_
 * _Spec 8: When users click delete all, they are routed to a page that confirms deletion_
-* _Spec 9: The user can click return on the delete page to return to the homepage, which is now empty
+* _Spec 9: The user can click return on the delete page to return to the homepage, which is now empty_
 
 ## Known Bugs
 
